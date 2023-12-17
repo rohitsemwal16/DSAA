@@ -2,9 +2,10 @@ package org.rosemwal.code.searchsort;
 
 import java.util.Scanner;
 
-public class SearchRotatedSortedArray {
+public class SearchSortedArray {
 
     // Case1: Simple increasing array (non duplicates)
+    // Case2: Simple increasing array (recursive)
     // Case2: Increasing array (duplicates)
     // Case3: Duplicates increasing array (first occurrence of an element)
     // Case4: Duplicates increasing array (last occurrence of an element)
@@ -17,6 +18,8 @@ public class SearchRotatedSortedArray {
         int num = sc.nextInt();
 
         System.out.println(String.format("Element is at %s index ",findElementSortedRotatedArray(arr, num)));
+        System.out.println(String.format("Element is at %s index ",findElementSortedRotatedArrayRecursive(arr, num, 0, arr.length-1)));
+
 
         int[] arr2 = {3,4,4,4,4,4,5,6,7,8,8,8,9};
         // I/p (4) -> O/p 1 (index)
@@ -36,6 +39,21 @@ public class SearchRotatedSortedArray {
 
         System.out.println(String.format("Element is at %s index first occurrence ",findElementSortedDuplicatesLastOccurrence(arr3, num3)));
 
+    }
+
+    private static int findElementSortedRotatedArrayRecursive(int[] arr, int num, int start, int end) {
+
+        int mid = start + (end - start)/2;
+
+        if ( num == arr [mid])  {
+            return mid;
+        }
+
+        if (num <arr[mid])  {
+            return findElementSortedRotatedArrayRecursive (arr, num, start, mid-1);
+        }   else {
+            return findElementSortedRotatedArrayRecursive (arr, num, mid+1, end);
+        }
     }
 
     private static int findElementSortedRotatedArray(int[] arr, int num)  {
