@@ -9,6 +9,7 @@ public class BitOperands472 {
         int num = 9;
         System.out.println(num<<4); // (9*2*2*2*2)
         System.out.println(num>>1); // (9/2)
+        System.out.println(~4);
 
         // Set a bit in a number at position (pos)
         Scanner sc = new Scanner(System.in);
