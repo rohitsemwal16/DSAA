@@ -46,14 +46,14 @@ public class ViewsIterativeInTrees180 {
 
         System.out.println("Top View of tree ");
         for(Map.Entry<Integer, Node> m : topViewMap.entrySet())   {
-            System.out.println(String.format("Key %d -- Value %d " , m.getKey(), m.getValue().data));
+            System.out.printf("Key %d -- Value %d %n", m.getKey(), m.getValue().data);
         }
 
         Map<Integer, Node> bottomViewMap = printBottomViewIterative(node);
 
         System.out.println("Bottom View of tree ");
         for(Map.Entry<Integer, Node> m : bottomViewMap.entrySet())   {
-            System.out.println(String.format("Key %d -- Value %d " , m.getKey(), m.getValue().data));
+            System.out.printf("Key %d -- Value %d %n", m.getKey(), m.getValue().data);
         }
 
     }
@@ -71,11 +71,8 @@ public class ViewsIterativeInTrees180 {
             int size = queue.size();
 
             List<Integer> sublist = new LinkedList<>();
-            boolean printInReverse = true;
+            boolean printInReverse = iteration % 2 == 0;
 
-            if (iteration%2 != 0) {
-             printInReverse = false;
-            }
             for (int i=0; i<size; i++) {
                 Node n = queue.poll();
 
