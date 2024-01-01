@@ -4,7 +4,7 @@ import java.util.Arrays;
 
 // Two steps -- 1. (creation of max heap) 2. Deletion of top element and putting it to end of an array
 // O(logn) - > insertion of 1 element -> n elements -> nlogn + deletion of n element - nlogn -> n(log(n))
-public class HeapSort {
+public class HeapSort331 {
 
     public static void main(String[] args)  {
 
