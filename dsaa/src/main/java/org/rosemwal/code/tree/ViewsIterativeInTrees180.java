@@ -32,7 +32,6 @@ public class ViewsIterativeInTrees180 {
         node.right.right = new Node(20);
         node.right.right.left = new Node(17);
 
-
         List<Integer> leftViewList = printLeftViewIterative(node);
         System.out.println("Left View " + Arrays.toString(leftViewList.toArray()));
 
@@ -56,6 +55,37 @@ public class ViewsIterativeInTrees180 {
             System.out.printf("Key %d -- Value %d %n", m.getKey(), m.getValue().data);
         }
 
+        Map<Node, Integer> diagonalViewMap = printDiagonalViewIterative(node); // left (root diagonal +1) // right no change
+
+        System.out.println("Diagonal View of tree ");
+        for(Map.Entry<Node, Integer> m : diagonalViewMap.entrySet())   {
+            System.out.printf("Key %d -- Value %d %n", m.getKey().data, m.getValue());
+        }
+    }
+
+    private static Map<Node, Integer> printDiagonalViewIterative(Node root) {
+
+        Map<Node, Integer> map = new HashMap<>();
+        Queue<Node> queue = new LinkedList<>();
+
+        map.put(root, 0);
+        queue.offer(root);
+
+        while(!queue.isEmpty()) {
+
+            Node node = queue.poll();
+            int diag = map.get(node);
+            if(node.left!= null)   {
+                map.put(node.left, diag+1);
+                queue.offer(node.left);
+            }
+
+            if(node.right!=null)    {
+                map.put(node.right, diag);
+                queue.offer(node.right);
+            }
+        }
+        return map;
     }
 
     // even row in reverse
