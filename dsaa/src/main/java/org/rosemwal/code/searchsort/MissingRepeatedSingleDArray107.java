@@ -4,7 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
-public class MissingRepeatedSingleDArray {
+public class MissingRepeatedSingleDArray107 {
 
     public static void main(String[] args)  {
         int[] arr = {4,3,6,2,1,1};

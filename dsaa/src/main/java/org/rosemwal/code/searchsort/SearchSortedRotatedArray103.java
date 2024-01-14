@@ -2,7 +2,7 @@ package org.rosemwal.code.searchsort;
 
 import java.util.Scanner;
 
-public class SearchSortedRotatedArray {
+public class SearchSortedRotatedArray103 {
 
     public static void main(String[] args) {
 
