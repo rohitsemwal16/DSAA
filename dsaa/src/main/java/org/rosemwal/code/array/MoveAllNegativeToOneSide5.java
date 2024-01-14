@@ -2,7 +2,7 @@ package org.rosemwal.code.array;
 
 import java.util.Arrays;
 
-public class MoveAllNegativeToOneSide {
+public class MoveAllNegativeToOneSide5 {
 
     public static void main(String[] args)  {
 
