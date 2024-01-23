@@ -7,7 +7,6 @@ public class ArithmeticExpressionEvaluation {
 
     public static void main(String[] args)  {
 
-
         String[] str = {"10","+","5","-","7","*","10","/","2","+","5"};
 
         String[] postfixExpression = convertInfixToPostFix(str);
