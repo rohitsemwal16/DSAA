@@ -52,7 +52,7 @@ class LRUCache  {
         }
     }
 
-    void getKey(int key)    {
+    int getKey(int key)    {
 
         if (map.containsKey(key))   {
 
@@ -60,13 +60,14 @@ class LRUCache  {
             removeElementFromLinkedList(map.get(key));
             map.remove(map.get(key));
             insertNodeAtBeginning(node);
+            return map.get(key).value;
         }   else {
             System.out.print("key Does not exist "+ key);
         }
+        return -1;
     }
 
     private void insertNodeAtBeginning(Node node) {
-
 
         node.next=head;
         if(head!=null) {
