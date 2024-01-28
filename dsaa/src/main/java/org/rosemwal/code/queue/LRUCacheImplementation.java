@@ -35,7 +35,7 @@ class LRUCache  {
         }
     }
 
-    void insertInHead(int key, int value) {
+    void put(int key, int value) {
 
         if (isFull())  {
             removeElementFromLinkedList(tail);
@@ -44,6 +44,7 @@ class LRUCache  {
         Node node = new Node(key, value);
 
         if (map.containsKey(key))   {
+            removeElementFromLinkedList(map.get(key));
             map.remove(map.get(key));
             insertNodeAtBeginning(node);
         } else {
@@ -82,20 +83,21 @@ class LRUCache  {
 
     void removeElementFromLinkedList(Node node) {
 
-        if (node != head)   {
-            node.prev.next = node.next;
-            if(node ==tail) {
-                tail = node.prev;
-            }
-        }   else if (node != tail) {
-            node.next.prev = node.prev;
-            if(node ==head) {
-                head = head.next;
-            }
-        }
+        if (node!=null) {
+            map.remove(node.key);
 
-        map.remove(node.key);
-        length--;
+            if (node == head) {
+                head = head.next;
+                head.prev = null;
+            }   else if (node == tail)  {
+                tail = tail.prev;
+                tail.next = null;
+            }   else {
+                node.prev.next = node.next;
+                node.next.prev = node.prev;
+            }
+            length--;
+        }
     }
 
     public void printElementsInCacheFromHeadToTail() {
@@ -123,14 +125,14 @@ public class LRUCacheImplementation   {
 
         LRUCache lruCache = new LRUCache(5);
 
-        lruCache.insertInHead(1,1);
-        lruCache.insertInHead(2,2);
-        lruCache.insertInHead(3,3);
-        lruCache.insertInHead(4,4);
-        lruCache.insertInHead(5,5);
+        lruCache.put(1,1);
+        lruCache.put(2,2);
+        lruCache.put(3,3);
+        lruCache.put(4,4);
+        lruCache.put(5,5);
         lruCache.getKey(1);
-        lruCache.insertInHead(6,6);
-        lruCache.insertInHead(7,7);
+        lruCache.put(6,6);
+        lruCache.put(7,7);
 
         lruCache.printElementsInCacheFromHeadToTail();
     }

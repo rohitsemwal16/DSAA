@@ -38,7 +38,7 @@ class DoublyLinkedList {
         System.out.println("Inserting element at beginning of linked list " + data);
         Node node = new Node(data);
 
-        if(isEmpty())    {
+        if (isEmpty())    {
             tail = node;
         }   else {
             head.prev = node;
@@ -61,6 +61,31 @@ class DoublyLinkedList {
 
         node.prev = tail;
         tail = node;
+    }
+
+    public void removeElement(int data) {
+
+        Node node = head;
+
+        while(node!=null && node.data!=data)    {
+            node = node.next;
+        }
+
+        if (node!=null) {
+
+            if (node == head) {
+                head = head.next;
+                head.prev = null;
+            }   else if (node == tail)  {
+                tail = tail.prev;
+                tail.next = null;
+            }   else {
+                node.prev.next = node.next;
+                node.next.prev = node.prev;
+            }
+            length--;
+        }
+
     }
 
     public void printDoublyLinkedListFromHeadToEnd() {
@@ -86,6 +111,14 @@ class DoublyLinkedList {
         }
         System.out.println();
     }
+
+    public int getHead()  {
+        return head.data;
+    }
+
+    public int getTail()  {
+        return tail.data;
+    }
 }
 
 public class DoublyLinkedListImplementation {
@@ -108,5 +141,17 @@ public class DoublyLinkedListImplementation {
 
         doublyLinkedList.printDoublyLinkedListFromHeadToEnd();
         doublyLinkedList.printDoublyLinkedListFromTailToStart();
+
+        System.out.println("Head is "+ doublyLinkedList.getHead());
+        System.out.println("Tail is "+ doublyLinkedList.getTail());
+
+        doublyLinkedList.removeElement(30);
+        doublyLinkedList.printDoublyLinkedListFromHeadToEnd();
+
+        doublyLinkedList.removeElement(40); // head
+        doublyLinkedList.printDoublyLinkedListFromHeadToEnd();
+
+        doublyLinkedList.removeElement(90); // tail
+        doublyLinkedList.printDoublyLinkedListFromHeadToEnd();
     }
 }
