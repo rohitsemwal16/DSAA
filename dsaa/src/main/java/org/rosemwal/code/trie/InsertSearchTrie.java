@@ -103,13 +103,5 @@ public class InsertSearchTrie {
         System.out.println("Startswith ba " + Trie.startsWith("ba"));
         System.out.println("Startswith bax " + Trie.startsWith("ba"));
 
-
-
-
-
-
-
-
-
     }
 }
