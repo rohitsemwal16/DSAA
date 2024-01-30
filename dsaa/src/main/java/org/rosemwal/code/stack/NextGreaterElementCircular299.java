@@ -3,7 +3,7 @@ package org.rosemwal.code.stack;
 import java.util.Arrays;
 import java.util.Stack;
 
-public class NextGreaterElementCircular {
+public class NextGreaterElementCircular299 {
 
     public static void main(String[] args)  {
 
