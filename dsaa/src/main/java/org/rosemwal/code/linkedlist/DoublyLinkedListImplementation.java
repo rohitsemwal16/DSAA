@@ -1,5 +1,9 @@
 package org.rosemwal.code.linkedlist;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+
 class DoublyLinkedList {
 
     private Node head;
@@ -61,6 +65,7 @@ class DoublyLinkedList {
 
         node.prev = tail;
         tail = node;
+        length++;
     }
 
     public void removeElement(int data) {
@@ -119,6 +124,27 @@ class DoublyLinkedList {
     public int getTail()  {
         return tail.data;
     }
+
+    public List<int[]> findPairs(int sum) { // O(n) Time complexity
+
+        Node temp1 = head;
+        Node temp2 = tail;
+        List<int[]> list = new ArrayList<>();
+
+        while(temp1!=null && temp1.data < temp2.data)  {
+
+            if ((temp1.data + temp2.data) == sum)  {
+                list.add(new int[]{temp1.data, temp2.data});
+                temp2 = temp2.prev;
+                temp1 = temp1.next;
+            }   else if ((temp1.data + temp2.data) > sum)   {
+                temp2 = temp2.prev;
+            }   else {
+                temp1 = temp1.next;
+            }
+        }
+        return list;
+    }
 }
 
 public class DoublyLinkedListImplementation {
@@ -152,6 +178,11 @@ public class DoublyLinkedListImplementation {
         doublyLinkedList.printDoublyLinkedListFromHeadToEnd();
 
         doublyLinkedList.removeElement(90); // tail
+        doublyLinkedList.removeElement(10); // tail
+        doublyLinkedList.insertAtBeginning(10);
+
         doublyLinkedList.printDoublyLinkedListFromHeadToEnd();
+
+        System.out.println(" " + Arrays.toString(doublyLinkedList.findPairs(80).toArray()));
     }
 }
