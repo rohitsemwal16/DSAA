@@ -26,7 +26,7 @@ class DoublyLinkedList {
     }
 
     public boolean isEmpty()    {
-        return length ==0; // head ==null;
+        return length == 0; // head ==null;
     }
 
     public int getLength()  {
