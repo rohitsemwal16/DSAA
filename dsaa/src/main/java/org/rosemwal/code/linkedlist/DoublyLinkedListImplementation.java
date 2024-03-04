@@ -90,7 +90,6 @@ class DoublyLinkedList {
             }
             length--;
         }
-
     }
 
     public void printDoublyLinkedListFromHeadToEnd() {
@@ -103,6 +102,20 @@ class DoublyLinkedList {
             start = start.next;
         }
         System.out.println();
+    }
+
+    public Node reverseOrder() {
+
+        Node current = head;
+        Node prev = null;
+
+        while (current != null) {
+            prev = current.prev;
+            current.prev = current.next;
+            current.next = prev;
+            current = current.prev;
+        }
+        return prev.prev;
     }
 
     public void printDoublyLinkedListFromTailToStart() {
@@ -119,6 +132,10 @@ class DoublyLinkedList {
 
     public int getHead()  {
         return head.data;
+    }
+
+    public void setHead(Node node)  {
+        this.head  = node;
     }
 
     public int getTail()  {
@@ -184,5 +201,10 @@ public class DoublyLinkedListImplementation {
         doublyLinkedList.printDoublyLinkedListFromHeadToEnd();
 
         System.out.println(" " + Arrays.toString(doublyLinkedList.findPairs(80).toArray()));
+
+        System.out.println("Reversal DLL ..");
+        doublyLinkedList.setHead(doublyLinkedList.reverseOrder());
+        doublyLinkedList.printDoublyLinkedListFromHeadToEnd();
+
     }
 }
