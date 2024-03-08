@@ -1,7 +1,5 @@
 package org.rosemwal.code.linkedlist;
 
-import java.util.HashSet;
-import java.util.Set;
 
 public class RemoveDuplicatesFromSortedList139 {
     Node head;
@@ -38,8 +36,6 @@ public class RemoveDuplicatesFromSortedList139 {
 
     private void removeDuplicates() {
 
-        Set<Integer> set = new HashSet<>();
-
         if(head == null || head.next == null)   {
             return;
         }
@@ -54,14 +50,12 @@ public class RemoveDuplicatesFromSortedList139 {
             }
 
             prev.next = current;
-
             prev = current;
 
-            if(current!= null) {
+            if (current!= null) {
                 current = current.next;
             }
         }
-
     }
 
     private void printLinkedListTraversalFromHeadToTail(Node node) {
