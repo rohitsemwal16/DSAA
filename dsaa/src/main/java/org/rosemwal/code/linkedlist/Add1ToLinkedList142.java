@@ -100,6 +100,5 @@ public class Add1ToLinkedList142 {
 
         list1.printLinkedListTraversalFromHeadToTail(null);
 
-
     }
 }
