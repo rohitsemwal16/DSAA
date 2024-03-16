@@ -108,14 +108,20 @@ class DoublyLinkedList {
 
         Node current = head;
         Node prev = null;
+        setTail(head);
 
         while (current != null) {
-            prev = current.prev;
-            current.prev = current.next;
+            Node next = current.next;
             current.next = prev;
-            current = current.prev;
+            current.prev = next;
+            prev = current;
+            current = next;
+//            prev = current.prev;
+//            current.prev = current.next;
+//            current.next = prev;
+//            current = current.prev;
         }
-        return prev.prev;
+        return prev;
     }
 
     public void printDoublyLinkedListFromTailToStart() {
@@ -140,6 +146,10 @@ class DoublyLinkedList {
 
     public int getTail()  {
         return tail.data;
+    }
+
+    public void setTail(Node tail)  {
+        this.tail = tail;
     }
 
     public List<int[]> findPairs(int sum) { // O(n) Time complexity
@@ -205,6 +215,7 @@ public class DoublyLinkedListImplementation {
         System.out.println("Reversal DLL ..");
         doublyLinkedList.setHead(doublyLinkedList.reverseOrder());
         doublyLinkedList.printDoublyLinkedListFromHeadToEnd();
+        doublyLinkedList.printDoublyLinkedListFromTailToStart();
 
     }
 }
