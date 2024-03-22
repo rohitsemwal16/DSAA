@@ -1,6 +1,8 @@
 package org.rosemwal.code.recursion;
 
 import java.util.Arrays;
+import java.util.HashMap;
+import java.util.Map;
 
 public class RecursionPractice {
 
@@ -43,6 +45,7 @@ public class RecursionPractice {
 
     private static int findFactorial(int n) {
 
+        Map map = new HashMap<>();
         if(n==1)    {
             return 1;
         }

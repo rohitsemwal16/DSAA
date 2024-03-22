@@ -43,10 +43,9 @@ public class ArraySubsequenceSumToK {
         System.out.println("Number of Occurrences.. ");
         System.out.println(getNumberOfOccurrences(arr, new ArrayList<>(), 0, 0, 5));
 
-
         System.out.println("Multiple sum.. ");
 
-        int[] arr1 = {1,1, 2, 2,2,3,4,5,6};
+        int[] arr1 = {1,2,3,4,5,6};
         subsequences = new LinkedList<>();
         getAllSubsequencesSumToKOneElementMultipleTimes(arr1, new ArrayList<>(), 0, 0, 7);
 
@@ -55,6 +54,34 @@ public class ArraySubsequenceSumToK {
             System.out.println();
         }
 
+        System.out.println("One sum without set");
+
+        int[] arr2 = {1,1,1,2,2};
+        subsequences = new LinkedList<>();
+        getAllSubsequencesSumToKOneElementAtATimeOnlyOneCombination(arr2, new ArrayList<>(), 0, 4);
+
+        for (int i=0; i<subsequences.size(); i++)    {
+            System.out.print(Arrays.toString(subsequences.get(i).toArray()));
+            System.out.println();
+        }
+    }
+
+    private static void getAllSubsequencesSumToKOneElementAtATimeOnlyOneCombination(int[] arr, ArrayList<Integer> subArray, int index, int target) {
+
+        if (target == 0) {
+           subsequences.add(new ArrayList<>(subArray));
+           return;
+        }
+
+        for (int i=index; i<arr.length; i++)   {
+
+            if(i>index && arr[i] == arr[i-1]) continue;
+            if(arr[i]>target) break;
+
+            subArray.add(arr[i]);
+            getAllSubsequencesSumToKOneElementAtATimeOnlyOneCombination(arr, subArray, i+1, target-arr[i]);
+            subArray.remove(subArray.size()-1);
+        }
     }
 
     private static void getAllSubsequencesSumToKOneElementMultipleTimes(int[] arr, List<Integer> output, int index, int sum, int k)    {
