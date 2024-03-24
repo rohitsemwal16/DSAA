@@ -80,9 +80,9 @@ public class CheckPalindromeLinkedList151 {
         linkedList.insertAtEnd(10);
         linkedList.insertAtEnd(20);
         linkedList.insertAtEnd(30);
-        linkedList.insertAtEnd(30);
         linkedList.insertAtEnd(20);
         linkedList.insertAtEnd(10);
+//        linkedList.insertAtEnd(10);
 
         System.out.println("Palindrome " + String.valueOf(linkedList.isPalindrome(linkedList.head)));
     }
