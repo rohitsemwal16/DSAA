@@ -13,6 +13,7 @@ public class DiameterOfTree180 {
         }
         }
 
+    static int max = 0;
 
     public static void main(String[] args)  {
 
@@ -20,21 +21,20 @@ public class DiameterOfTree180 {
         root.left = new Node(5);
         root.right = new Node(15);
         root.left.right = new Node(8);
-         int arr[] = new int[1];
 
-        System.out.println("Diameter is " + findDiameter(root, arr) + " " + arr[0]);
+        System.out.println("Diameter is " + findDiameter(root) + " " + max);
     }
 
-    private static int findDiameter(Node root, int[] arr) {
+    private static int findDiameter(Node root) {
 
         if (root == null) {
             return 0;
         }
 
-        int left = findDiameter(root.left, arr);
-        int right = findDiameter(root.right, arr);
+        int left = findDiameter(root.left);
+        int right = findDiameter(root.right);
 
-        arr[0] = Math.max(arr[0], 1+left+right);
+        max = Math.max(max, 1+left+right);
 
         return 1 + Math.max(left, right);
 
