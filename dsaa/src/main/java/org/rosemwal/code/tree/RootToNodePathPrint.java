@@ -84,8 +84,6 @@ public class RootToNodePathPrint {
 
         if(root.data == x)  {
             result.add(new ArrayList<>(arr));
-            arr.remove(arr.size()-1);
-            return;
         }
 
         printMultipleNodePathToRootPath(root.left, arr, x);
