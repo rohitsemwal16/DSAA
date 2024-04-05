@@ -77,9 +77,6 @@ public class RootToNodePathPrint {
             return;
         }
 
-        System.out.println(root.data + " " + Arrays.toString(arr.toArray()));
-        System.out.println();
-
         arr.add(root.data);
 
         if(root.data == x)  {
@@ -90,7 +87,6 @@ public class RootToNodePathPrint {
         printMultipleNodePathToRootPath(root.right, arr, x);
 
         arr.remove(arr.size()-1);
-        return;
     }
 
     public static void main(String[] args)  {
