@@ -1,6 +1,5 @@
 package org.rosemwal.code.array;
 
-import java.util.Deque;
 
 public class FindPivotInteger2485Leetcode {
 
