@@ -37,17 +37,16 @@ class LRUCache  {
 
     void put(int key, int value) {
 
-        if (isFull())  {
-            removeElementFromLinkedList(tail);
-        }
-
         Node node = new Node(key, value);
 
         if (map.containsKey(key))   {
             removeElementFromLinkedList(map.get(key));
-            map.remove(map.get(key));
+            map.remove(key);
             insertNodeAtBeginning(node);
         } else {
+            if (isFull())  {
+                removeElementFromLinkedList(tail);
+            }
             map.put(key, node);
             insertNodeAtBeginning(node);
         }
@@ -59,7 +58,7 @@ class LRUCache  {
 
             Node node = new Node(key, map.get(key).value);
             removeElementFromLinkedList(map.get(key));
-            map.remove(map.get(key));
+            map.remove(key);
             insertNodeAtBeginning(node);
             return map.get(key).value;
         }   else {
