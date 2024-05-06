@@ -229,7 +229,8 @@ public class ViewsIterativeInTrees180 {
                 Node n = queue.poll();
                 int level = 0;
 
-                Optional<Map.Entry<Integer, Node>> nodeLevel = map.entrySet().stream().filter(x-> Objects.equals(x.getValue(), n)).findFirst();
+                Optional<Map.Entry<Integer, Node>> nodeLevel = map.entrySet().stream()
+                        .filter(x-> Objects.equals(x.getValue(), n)).findFirst();
 
                 if (nodeLevel.isPresent())   {
                     level = nodeLevel.get().getKey();
