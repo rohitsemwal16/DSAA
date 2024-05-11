@@ -4,7 +4,7 @@ import org.rosemwal.lld.designpatterns.creational.strategy.drivingStrategy.HighS
 
 public class SportsCar extends Vehicle {
 
-    SportsCar() {
+    public SportsCar() {
         super(new HighSpeedStrategy());
     }
 }

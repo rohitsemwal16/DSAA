@@ -4,8 +4,7 @@ import org.rosemwal.lld.designpatterns.creational.strategy.drivingStrategy.Norma
 
 public class PassengerVan extends Vehicle {
 
-
-    PassengerVan() {
+    public PassengerVan() {
         super(new NormalSpeedVehicle());
     }
 }
