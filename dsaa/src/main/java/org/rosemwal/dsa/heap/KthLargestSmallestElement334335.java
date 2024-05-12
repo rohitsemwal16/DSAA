@@ -37,6 +37,7 @@ public class KthLargestSmallestElement334335 {
             pq.offer(arr[i]);
 
             if (pq.size()>k) {
+                pq.poll();
             }
         }
         return pq.peek();
