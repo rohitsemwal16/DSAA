@@ -5,6 +5,9 @@ import java.util.Arrays;
 import java.util.LinkedList;
 import java.util.List;
 
+import static org.rosemwal.dsa.string.PrintAllStringSubsequence60.getAllSubsequences;
+
+
 public class ArraySubsequenceSumToK {
 
     static List<List<Integer>> subsequences = new ArrayList<>();
@@ -29,7 +32,12 @@ public class ArraySubsequenceSumToK {
     public static void main(String[] args)  {
 
         int[] arr = {1, 3, 2, 4, 5, 1};
+        int[] arr5 = {1, 2, 3, 4};
 
+        System.out.println("All Subsequences..");
+        getAllSubsequences(arr5, new ArrayList<>(), 0);
+
+        System.out.println("Subsequence with Sum 5 .." );
         getAllSubsequencesSumToK(arr,  new ArrayList<>(), 0, 0, 5);
 
         for (int i=0; i<subsequences.size(); i++)    {

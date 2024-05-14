@@ -9,7 +9,7 @@ public class PrintAllStringSubsequence60 {
 
     static List<List<Integer>> subsequences = new LinkedList<>();
 
-    private static void getAllSubsequences(int[] arr, List<Integer> intermediateOutput, int index) {
+    public static void getAllSubsequences(int[] arr, List<Integer> intermediateOutput, int index) {
 
         if (index == arr.length)    {
             subsequences.add(new LinkedList<>(intermediateOutput));
