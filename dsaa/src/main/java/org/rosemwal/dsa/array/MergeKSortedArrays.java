@@ -1,5 +1,10 @@
 package org.rosemwal.dsa.array;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.PriorityQueue;
+
 public class MergeKSortedArrays {
 
     public static void main(String[] args)  {
@@ -9,11 +14,26 @@ public class MergeKSortedArrays {
                     { 23, 34, 90, 2000 } };
 
         System.out.println("Merged array is :");
-        mergeKSortedArrays(arr, arr.length);
+        List<Integer> list = mergeKSortedArrays(arr, arr.length);
+        System.out.println(Arrays.toString(list.toArray()));
     }
 
-    private static void mergeKSortedArrays(int[][] arr, int length) {
+    private static ArrayList<Integer> mergeKSortedArrays(int[][] arr, int K) {
 
+        ArrayList<Integer> result= new ArrayList<Integer>();
+        PriorityQueue<Integer> pq=new PriorityQueue<Integer>();
+        for(int i=0;i<K;i++){
+            for(int j=0;j<K;j++){
+                pq.add(arr[i][j]);
+            }
+        }
+
+        while(!pq.isEmpty())
+        {
+            result.add(pq.poll());
+        }
+        return result;
 
     }
+
 }
