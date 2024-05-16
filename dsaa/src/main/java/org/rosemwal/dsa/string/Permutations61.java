@@ -1,9 +1,6 @@
 package org.rosemwal.dsa.string;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.LinkedList;
-import java.util.List;
+import java.util.*;
 
 public class Permutations61 {
 
@@ -12,6 +9,7 @@ public class Permutations61 {
         if(arr.length == subResult.size())  {
             result.add(new ArrayList<>(subResult));
             return;
+
         }
 
 

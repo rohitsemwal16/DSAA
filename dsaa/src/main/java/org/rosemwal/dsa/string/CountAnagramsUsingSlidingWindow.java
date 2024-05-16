@@ -36,6 +36,7 @@ public class CountAnagramsUsingSlidingWindow {
 
             if (j-i+1==k) {
                 if (count == 0) {
+                    System.out.println("Starting Location at "+ i);
                     res += 1;
                 }
                 if(map.containsKey(textChars[i]))   {
