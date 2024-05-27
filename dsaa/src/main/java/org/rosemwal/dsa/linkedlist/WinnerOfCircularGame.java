@@ -25,6 +25,16 @@ public class WinnerOfCircularGame {
         WinnerOfCircularGame game = new WinnerOfCircularGame();
 
         System.out.println("Winner is" + game.getWinner(5,2));
+
+        System.out.println("Winner recursive "+ (game.findWinnerRecursive(5, 3)+1));
+    }
+
+    private int findWinnerRecursive(int n, int k)    {
+
+        if(n==1)
+            return 0;
+
+        return (findWinnerRecursive(n-1, k) + k)%n;
     }
 
     private int getWinner(int n, int k) {
