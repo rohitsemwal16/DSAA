@@ -43,6 +43,20 @@ public class BstCreationInsertion231 {
         this.root = insert(data, this.root);
     }
 
+    private static Node search(Node root, int k) {
+
+        if (root == null || root.data == k) {
+            return root;
+        }
+
+        System.out.println("Searching .. "+ root.data);
+
+        if (k<root.data)    {
+            return search(root.left, k);
+        }   else
+            return search(root.right, k);
+    }
+
     void insertIterative(int data)   {
 
         Node temp = root;
@@ -118,7 +132,8 @@ public class BstCreationInsertion231 {
         List<Integer> list = bstCreationInsertion.levelOrderTraversal(bstCreationInsertion.root);
         System.out.println(Arrays.toString(list.toArray()));
 
-    }
+        System.out.println("SearchedElement "+ search(bstCreationInsertion.root, 8).data);
 
+    }
 
 }
