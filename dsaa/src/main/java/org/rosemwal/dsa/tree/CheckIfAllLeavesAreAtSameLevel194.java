@@ -7,16 +7,40 @@ public class CheckIfAllLeavesAreAtSameLevel194 {
 
     public static void main(String[] args)  {
 
-        Node root1 = new Node(10);
-        root1.left = new Node(2);
+        String str = "1";
 
-        root1.left.right = new Node(8);
-        root1.right =new Node(15);
-        root1.right.left = new Node(13);
-        root1.right.right = new Node(20);
-        root1.right.right.left = new Node(18);
+        System.out.println(find(str));
+        System.out.println(find("899"));
 
-        System.out.println("Leaves in same level " + isLeavesInSameLevel(root1));
+        System.out.println(find("98"));
+
+
+//        Node root1 = new Node(10);
+//        root1.left = new Node(2);
+//
+//        root1.left.right = new Node(8);
+//        root1.right =new Node(15);
+//        root1.right.left = new Node(13);
+//        root1.right.right = new Node(20);
+//        root1.right.right.left = new Node(18);
+//
+//        System.out.println("Leaves in same level " + isLeavesInSameLevel(root1));
+
+    }
+
+    private static String find(String str) {
+        String output = "";
+
+        char[] charArray = str.toCharArray();
+
+        if (charArray[0] != '1')    {
+            output += charArray[0] -'1';
+        }
+        for(int k=1; k<charArray.length; k++)   {
+            output = output + "9";
+        }
+
+        return output;
 
     }
 
