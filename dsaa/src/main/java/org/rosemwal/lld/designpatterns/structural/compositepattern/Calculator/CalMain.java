@@ -1,4 +1,4 @@
-package org.rosemwal.lld.designpatterns.compositepattern.Calculator;
+package org.rosemwal.lld.designpatterns.structural.compositepattern.Calculator;
 
 public class CalMain {
 

@@ -1,4 +1,4 @@
-package org.rosemwal.lld.designpatterns.compositepattern.FileSystem;
+package org.rosemwal.lld.designpatterns.structural.compositepattern.FileSystem;
 
 public class File implements FileSystem {
 
