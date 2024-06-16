@@ -16,6 +16,17 @@ public class LoggerSingleton {
         return lazyInstance;
     }
 
+    public static LoggerSingleton getLazyInstanceThreadSafe() { // LAZY LOADING // loading when needed instead of app startup
+        if (lazyInstance == null)    {
+            synchronized (LoggerSingleton.class) {
+                if (lazyInstance == null) {
+                    lazyInstance = new LoggerSingleton();
+                }
+            }
+        }
+        return lazyInstance;
+    }
+
     public static LoggerSingleton getEagerInstance() { // LAZY LOADING // loading when needed instead of app startup
         return eagerInstance;
     }
