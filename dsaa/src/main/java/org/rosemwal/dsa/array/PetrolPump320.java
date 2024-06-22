@@ -55,10 +55,8 @@ public class PetrolPump320 {
          int rem = 0;
 
          while(count<n)    {
-             rem += gas[index%n] -cost[index%n] + gas[(index+1)%n];
-             if(rem>=gas[(index+1)%n])   {
-                 rem = rem-gas[(index+1)%n];
-             }   else    {
+             rem += gas[index%n] -cost[index%n];
+             if(rem<0)   {
                  return false;
              }
              index++;
