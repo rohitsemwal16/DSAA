@@ -146,7 +146,7 @@ class LFUCache  {
         System.out.println("Key Value Map "+ keyValueMap.toString());
 
         for (Map.Entry<Integer, DLLNodeList> m : frequencyListNodeMap.entrySet()) {
-            System.out.print("Freq Key Map " + m.getKey() + " -- ");
+            System.out.print("Freq Key Map " + m.getKey() + " -----> ");
 
             DLLNodeList node = m.getValue();
             DLLNode temp = node.head.next;
@@ -154,8 +154,8 @@ class LFUCache  {
             while (temp!=node.tail)  {
                 System.out.print("Freq Val Map " + temp.key + " -" + temp.value + " --- ");
                 temp = temp.next;
-
             }
+            System.out.println();
 
         }
     }
@@ -174,6 +174,7 @@ public class LFUCacheImplementation {
         lfuCache.put(4, 20);
         lfuCache.get(2);
         lfuCache.put(4,2);
+        lfuCache.put(5,25);
     }
 
 }
