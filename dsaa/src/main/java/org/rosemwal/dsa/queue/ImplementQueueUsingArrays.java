@@ -1,4 +1,4 @@
-package org.rosemwal.dsa.stack;
+package org.rosemwal.dsa.queue;
 
 public class ImplementQueueUsingArrays {
 
@@ -30,7 +30,7 @@ public class ImplementQueueUsingArrays {
 
     private static void offer(int num) {
 
-        if (!isFull() && rear!=0)  {
+        if (isFull() && rear!=0)  {
             System.out.println(
                     String.format("Queue is full, cannot add elements {%s} further rear {%s}, front {%s}", num, rear, front));
         }   else {
@@ -41,6 +41,7 @@ public class ImplementQueueUsingArrays {
             for(int i=front; i<rear; i++)  {
                 System.out.print(queue[i%n]+" " );
             }
+            System.out.println();
         }
     }
 
