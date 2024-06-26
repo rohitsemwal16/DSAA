@@ -3,6 +3,7 @@ package org.rosemwal.dsa.matrix;
 import java.util.LinkedList;
 import java.util.Queue;
 
+// https://leetcode.com/problems/shortest-path-in-binary-matrix/description/
 public class ShortestPathAllOOr1 {
 
     public static void main(String[] args)  {
@@ -45,10 +46,11 @@ public class ShortestPathAllOOr1 {
                 int newR = rPoll+ r[i];
                 int newC = cPoll + c[i];
 
-
                 if (isBound(newR, newC, row, col) &&
                         !visited[newR][newC] && (grid[newR][newC] == 0))    {
                     queue.offer(new int[] {newR, newC, dis+1});
+
+                    System.out.println(newR +" "+ newC + " "+ (dis+1));
                     visited[newR][newC] = true;
                 }
 
