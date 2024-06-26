@@ -47,9 +47,6 @@ public class MS {
         if(i < 0 || i >= r || j < 0 || j >= c || visited[i][j] || cur>(sum-cur)) {
             return;
         }
-
-
-
         int val = A[i][j];
         dfs(A, i + 1, j, r, c, visited, sum, cur+val);
         dfs(A, i, j + 1, r, c, visited, sum, cur+val);
