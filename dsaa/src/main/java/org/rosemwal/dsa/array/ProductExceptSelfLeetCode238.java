@@ -24,7 +24,7 @@ public class ProductExceptSelfLeetCode238 {
 
     public static void main(String[] args) {
 
-        int[] arr = {1,2,3,4};
+        int[] arr = {2,2,3,4};
         System.out.println(Arrays.toString(productExceptSelf(arr)));
 
         int[] arr2 = {-1,1,0,-3,3};

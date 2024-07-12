@@ -3,8 +3,8 @@ package org.rosemwal.dsa.array;
 public class NumberOfSubarraySumToK {
 
     public static void main(String[] args)  {
-        int[] arr = {1};
-        System.out.println("Subarray is " +subarraySum(arr, 0));
+        int[] arr = {1, 2, 3};
+        System.out.println("Subarray is " +subarraySum(arr, 3));
     }
 
     public static int subarraySum(int[] nums, int k) {

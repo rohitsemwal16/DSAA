@@ -1,4 +1,4 @@
-package org.rosemwal.dsa.array;
+package org.rosemwal.dsa.string;
 
 import java.util.Arrays;
 import java.util.Comparator;
